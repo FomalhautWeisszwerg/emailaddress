@@ -16,10 +16,11 @@
 
 package uk.gov.hmrc.emailaddress
 
-import org.scalatest.{WordSpec, Matchers}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 import play.api.libs.json.{Json, JsError, JsSuccess, JsString}
 
-class PlayJsonFormatsSpec extends WordSpec with Matchers {
+class PlayJsonFormatsSpec extends AnyWordSpec with Matchers {
 
   import PlayJsonFormats._
 

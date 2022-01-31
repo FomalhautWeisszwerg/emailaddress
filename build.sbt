@@ -11,9 +11,9 @@ lazy val emailaddress = Project(appName, file("."))
     ),
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play-json" % "2.9.2" % Provided,
-      "org.scalatest" %% "scalatest" % "3.0.5" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.11" % Test,
+      "org.scalatestplus" %% "scalacheck-1-15" % "3.2.11.0" % "test",
       "org.pegdown" % "pegdown" % "1.6.0" % Test,
-      "org.scalacheck" %% "scalacheck" % "1.13.5" % Test
     ),
     crossScalaVersions := Seq("2.13.8")
   )

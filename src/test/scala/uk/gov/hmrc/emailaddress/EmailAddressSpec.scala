@@ -16,11 +16,13 @@
 
 package uk.gov.hmrc.emailaddress
 
-import org.scalatest.prop.PropertyChecks
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
+
 import uk.gov.hmrc.emailaddress.EmailAddress.{Mailbox, Domain}
 
-class EmailAddressSpec extends WordSpec with Matchers with PropertyChecks with EmailAddressGenerators {
+class EmailAddressSpec extends AnyWordSpec with Matchers with ScalaCheckPropertyChecks with EmailAddressGenerators {
 
   "Creating an EmailAddress class" should {
     "work for a valid email" in {

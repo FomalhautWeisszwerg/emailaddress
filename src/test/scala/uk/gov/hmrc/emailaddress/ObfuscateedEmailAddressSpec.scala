@@ -16,10 +16,11 @@
 
 package uk.gov.hmrc.emailaddress
 
-import org.scalatest.prop.PropertyChecks
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-class ObfuscateedEmailAddressSpec extends WordSpec with Matchers with PropertyChecks with EmailAddressGenerators {
+class ObfuscateedEmailAddressSpec extends AnyWordSpec with Matchers with ScalaCheckPropertyChecks with EmailAddressGenerators {
 
   "Obfuscating an email address" should {
     "work for a valid email address with a long mailbox" in {
