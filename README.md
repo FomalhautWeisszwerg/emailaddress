@@ -103,14 +103,82 @@ scala> val s: String = EmailAddress("example@test.com").mailbox
 s: String = example
 ```
 
-### Installing
+## Install
 
-Include the following dependency in your SBT build
+### Prerequisit
+
+* [sbt-1.6.1](https://www.scala-sbt.org/)
+* [OpenJDK 17.0.1](https://openjdk.java.net/)
+
+Note, [GraalVM Community Edition 21.3.0](https://www.graalvm.org/) also supported.
+
+### Build
+
+Currently, you need to use ["publishLocal" feature](https://www.scala-sbt.org/1.x/docs/Publishing.html#Publishing+locally) of SBT.
+
+1. Clone from [GitHub](https://github.com/FomalhautWeisszwerg/emailaddress.git)
+
+```shell
+git clone https://github.com/FomalhautWeisszwerg/emailaddress.git
+```
+
+2. Build with `sbt`
+
+```shell
+sbt -java-home ${JAVA_HOME} compile
+```
+
+3. Running tests
+
+```shell
+sbt -java-home ${JAVA_HOME} test
+```
+
+4. Publish to the local
+
+```shell
+sbt -java-home ${JAVA_HOME} publishLocal
+```
+
+Now, `emailaddress` has been installed in ${HOME}/.ivy2/local directory as following:
+
+```shell
+$ LANG=C tree ${HOME}/.ivy2
+/home/fomalhaut/.ivy2
+`-- local
+    `-- emailaddress
+        `-- emailaddress_2.13
+            `-- 0.1.0-SNAPSHOT
+                |-- docs
+                |   |-- emailaddress_2.13-javadoc.jar
+                |   |-- emailaddress_2.13-javadoc.jar.md5
+                |   `-- emailaddress_2.13-javadoc.jar.sha1
+                |-- ivys
+                |   |-- ivy.xml
+                |   |-- ivy.xml.md5
+                |   `-- ivy.xml.sha1
+                |-- jars
+                |   |-- emailaddress_2.13.jar
+                |   |-- emailaddress_2.13.jar.md5
+                |   `-- emailaddress_2.13.jar.sha1
+                |-- poms
+                |   |-- emailaddress_2.13.pom
+                |   |-- emailaddress_2.13.pom.md5
+                |   `-- emailaddress_2.13.pom.sha1
+                `-- srcs
+                    |-- emailaddress_2.13-sources.jar
+                    |-- emailaddress_2.13-sources.jar.md5
+                    `-- emailaddress_2.13-sources.jar.sha1
+
+9 directories, 15 files
+```
+
+## Import
+
+After installation, add the following dependency in your build.sbt
 
 ```scala
-resolvers += Resolver.bintrayRepo("hmrc", "releases")
-
-libraryDependencies += "uk.gov.hmrc" %% "emailaddress" % "<INSERT VERSION>"
+libraryDependencies += "default" %% "emailaddress" % "0.1.0-SNAPSHOT"
 ```
 
 ## License
