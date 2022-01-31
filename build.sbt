@@ -15,5 +15,6 @@ lazy val emailaddress = Project(appName, file("."))
       "org.scalatestplus" %% "scalacheck-1-15" % "3.2.11.0" % "test",
       "org.pegdown" % "pegdown" % "1.6.0" % Test,
     ),
-    crossScalaVersions := Seq("2.13.8")
   )
+
+scalaVersion := "2.13.8"
