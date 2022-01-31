@@ -1,9 +1,9 @@
 val appName = "emailaddress"
 
 lazy val emailaddress = Project(appName, file("."))
-  .enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning, SbtArtifactory)
-  .settings(majorVersion := 3)
-  .settings(makePublicallyAvailableOnBintray := true)
+//  .enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning, SbtArtifactory)
+//  .settings(majorVersion := 3)
+//  .settings(makePublicallyAvailableOnBintray := true)
   .settings(
     scalacOptions ++= Seq(
       "-feature",
@@ -15,5 +15,5 @@ lazy val emailaddress = Project(appName, file("."))
       "org.pegdown" % "pegdown" % "1.6.0" % Test,
       "org.scalacheck" %% "scalacheck" % "1.13.5" % Test
     ),
-    crossScalaVersions := Seq("2.11.11", "2.12.3")
+    crossScalaVersions := Seq("2.13.8")
   )
