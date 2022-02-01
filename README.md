@@ -178,7 +178,7 @@ $ LANG=C tree ${HOME}/.ivy2
 After installation, add the following dependency in your build.sbt
 
 ```scala
-libraryDependencies += "default" %% "emailaddress" % "0.1.0-SNAPSHOT"
+libraryDependencies += "emailaddress" %% "emailaddress" % "0.1.0-SNAPSHOT"
 ```
 
 ## License
